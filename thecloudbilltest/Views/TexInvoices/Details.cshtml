@@ -1,0 +1,104 @@
+﻿@model thecloudbilltest.Models.TexInvoice
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Report</h1>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <h4>TexInvoice</h4>
+        </div>
+        <div class="col-md-6">
+            <input id="Button1" type="button" value="Print" />
+        </div>
+    </div>
+    <hr />
+    <div class="container-fluid" style="border:1px solid black;width:800px">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 style="text-align:center">TheCloudBill</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <dl class="row">
+                    <dt class="col-sm-4">
+                        InvoiceNo
+                    </dt>
+                    <dd class="col-sm-8">
+                        @Html.DisplayFor(model => model.InvoiceID)
+                    </dd>
+                    <dt class="col-sm-3">
+                        Date
+                    </dt>
+                    <dd class="col-sm-9">
+                        @DateTime.Now.ToShortDateString()
+                    </dd>
+                </dl>
+            </div>
+            <div class="col-md-4">
+
+            </div>
+
+            <div class="col-md-4">
+                <dl class="row">
+                    <dt class="col-sm-3">
+                        Name
+                    </dt>
+                    <dd class="col-sm-9">
+                        @Html.DisplayFor(model => model.FullName)
+                    </dd>
+                    <dt class="col-sm-3">
+                        @Html.DisplayNameFor(model => model.Address)
+                    </dt>
+                    <dd class="col-sm-9">
+                        @Html.DisplayFor(model => model.Address)
+                    </dd>
+                    <dt class="col-sm-3">
+                        @Html.DisplayNameFor(model => model.Location)
+                    </dt>
+                    <dd class="col-sm-9">
+                        @Html.DisplayFor(model => model.Location)
+                    </dd>
+                    <dt class="col-sm-3">
+                        @Html.DisplayNameFor(model => model.City)
+                    </dt>
+                    <dd class="col-sm-9">
+                        @Html.DisplayFor(model => model.City)
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-md-12">
+                <table>
+                    <tr style="font-weight:bold">
+                        <td width="100">Name</td>
+                        <td width="100">Qty</td>
+                        <td width="100">Price</td>
+                    </tr>
+                    <tr>
+                        <td> @Html.DisplayFor(model => model.ProductName)</td>
+                        <td> @Html.DisplayFor(model => model.Qty)</td>
+                        <td> @Html.DisplayFor(model => model.Price)</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-md-12">
+                <p>Total Amount <br />Notes....<br /></p>
+            </div>
+        </div>
+    </div>
+ 
+</div>
+@*<div>
+    <a asp-action="Edit" asp-route-id="@Model.InvoiceID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>*@
